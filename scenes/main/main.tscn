@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bb8et88v7amkf"]
+[gd_scene load_steps=8 format=3 uid="uid://bb8et88v7amkf"]
 
 [ext_resource type="PackedScene" uid="uid://bpg2k3in0j2uw" path="res://scenes/game_object/player/player.tscn" id="1_csdac"]
 [ext_resource type="PackedScene" path="res://scenes/manager/enemy_manager.tscn" id="1_dwrio"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://ml4n3mksqus5" path="res://scenes/manager/area_time_manager.tscn" id="2_o24es"]
 [ext_resource type="PackedScene" path="res://scenes/game_object/game_camera/game_camera.tscn" id="3_0k3k5"]
 [ext_resource type="PackedScene" uid="uid://bhkunwwsujsx8" path="res://scenes/manager/experience_manager.tscn" id="3_01wre"]
-[ext_resource type="PackedScene" uid="uid://qhs2afj6nguj" path="res://scenes/game_object/experience_vial/experience_vial.tscn" id="7_8q8yc"]
 
 [node name="Main" type="Node"]
 
@@ -29,18 +28,3 @@ layer_0/tile_data = PackedInt32Array(2097209, 0, 4, 2031673, 0, 4, 1966137, 0, 4
 
 [node name="Player" parent="." instance=ExtResource("1_csdac")]
 position = Vector2(441, 262)
-
-[node name="ExperienceVial" parent="." instance=ExtResource("7_8q8yc")]
-position = Vector2(265, 300)
-
-[node name="ExperienceVial2" parent="." instance=ExtResource("7_8q8yc")]
-position = Vector2(393, 345)
-
-[node name="ExperienceVial3" parent="." instance=ExtResource("7_8q8yc")]
-position = Vector2(537, 335)
-
-[node name="ExperienceVial4" parent="." instance=ExtResource("7_8q8yc")]
-position = Vector2(584, 251)
-
-[node name="ExperienceVial5" parent="." instance=ExtResource("7_8q8yc")]
-position = Vector2(495, 183)

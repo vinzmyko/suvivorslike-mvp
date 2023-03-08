@@ -1,0 +1,33 @@
+2:
+- Can ctrl + drag so increase values in increments of 1 pixel.
+3:
+- Nodes furthers down the tree's ready() function is called first. ie. Bottom to top ready functions are called first
+4:
+- Node draw order is the opposite meaning nodes higher up are drawn first. ie. Nodes near the bottom are above everything
+5:
+- Ctrl + Shift + O = Quick open scene
+7:
+Ctrl + Shift + A = Quick add scene to current scene
+10:
+-used functions are an arugument to a function.
+	Array's filter(method) function which goes through each element in the array and does an operation on it which in set
+	inside the function parameters. If it returns true then it doesn't get filtered out.
+	eg. enemies.filter(func(enemy: Node2D):
+		return enemy.global_position.distance_squared_to(player.global_position) < pow(MAX_RANGE, 2)
+	)
+	Goes through each enemy in the enemies array and checks if it is within the MAX_RANGE, if it's not in the MAX_RANGE
+	then it get filtered out. After the filter function gets run, the enemies array will only have enemies that are
+	within the range.
+	
+	Array's sort_custom(func) function. This sorts the array using a function. The function should have 2 arguments
+	which are the elements in the array. The function must return either true or false. If it returns true then
+	element b will be sorted after element a.
+	eg. 	enemies.sort_custom(func(a:Node2D, b:Node2D):
+		var a_distance = a.global_position.distance_squared_to(player.global_position)
+		var b_distance = b.global_position.distance_squared_to(player.global_position)
+		return a_distance < b_distance
+	)
+	This function basically sorts the enemies from closest to farthest with index 0 being the closest. Calculates the
+	distance from the player and element a and does the same with with element b. Then it checks to see if element a
+	is less than element b if it's true then element b will go after element a meaning that the furthest element will
+	go up in the index.

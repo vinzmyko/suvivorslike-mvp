@@ -20,5 +20,5 @@ func get_direction_to_player() -> Vector2:
 	return Vector2.ZERO
 
 
-func on_area_entered(other_area: Area2D):
+func on_area_entered(_other_area: Area2D):
 	queue_free()

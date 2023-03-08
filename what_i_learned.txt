@@ -12,9 +12,10 @@ Ctrl + Shift + A = Quick add scene to current scene
 -used functions are an arugument to a function.
 	Array's filter(method) function which goes through each element in the array and does an operation on it which in set
 	inside the function parameters. If it returns true then it doesn't get filtered out.
-	eg. enemies.filter(func(enemy: Node2D):
+	eg. enemies = enemies.filter(func(enemy: Node2D):
 		return enemy.global_position.distance_squared_to(player.global_position) < pow(MAX_RANGE, 2)
 	)
+	NOTE YOU GOT TO WE HAVE TO REASSIGN ENEMIES SO IT ACTUALLY UPDATES AND WE CAN USE IT
 	Goes through each enemy in the enemies array and checks if it is within the MAX_RANGE, if it's not in the MAX_RANGE
 	then it get filtered out. After the filter function gets run, the enemies array will only have enemies that are
 	within the range.

@@ -18,7 +18,7 @@ func on_timer_timerout():
 	#filter function takes each element in the array as an argument and runs it through the callable to see if
 	#it will be preserved in the filter. ie. which element to take away
 	#basically if enemy in within the MAX_RANGE it will stay within the array
-	enemies.filter(func(enemy: Node2D):
+	enemies = enemies.filter(func(enemy: Node2D):
 		return enemy.global_position.distance_squared_to(player.global_position) < pow(MAX_RANGE, 2)
 	)
 	if enemies.size() == 0:

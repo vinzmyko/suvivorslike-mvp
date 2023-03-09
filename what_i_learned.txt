@@ -52,4 +52,40 @@ the signal to and write the code to.
 goes as follows, you need to deffer the call, 
 eg. Callable(check_death).call_deferred()
 This only calls the function after it does all the necessary calculations
-
+19:
+- How this guy abstracts components is he has a scene for the actual ability and then he has a hurtbox component on all
+abilities. He then has a controller object that manages the spawning of the ability on where.
+- Before he put all the functionality of taking damage from the basic_enemy main node to the HurtboxComponent which
+handles all the damage done. Via on_area_entered signal. The HealthComponent is the one that deals with the damage to
+the object.
+-In the sword ability it only contains a refference to the HitboxComponent which does all the logic which is actually
+nothing as of right now as all it needs to do it spawn the HitboxArea2D on the enemy and that does everything as the
+sword controller handles the damage
+-On margin containers remember to go to Mouse -> Filter -> Ignore. REMEMBER ALL CONTROL NODES HAS A MOUSE FILTER SETTING
+22:
+-He has logic for certain things in each node and he gets a refference to that node via @export var node: Node and then
+the calls the functions from that node on the manager/handler script
+- When you want to pause the game use get_tree().pause = true, but you need to go to the setting
+Node -> Process -> Mode -> Always
+23:
+-.connect(function_name.bind()) able to bind parameters when the callable doesn't have any
+-How the level up workflow goes:
+	Collect vials emits a signal -> ExperienceManager listens to it and handles current exp calcs to level up
+	-> When you have enough exp to level up -> emits level up signal -> UpgradeManager listens to it
+	-> Picks from random ability in the ability pool -> instance upgrade screen pop up -> calls upgrade_scene's method
+	which takes an array of upgrades and instances new cards on the screen -> also connects to an input selected signal
+	on the upgrade_screen -> which applies upgrade on click
+- Use of GameEvents singleton (global signal bus) is to push variables to the very top of the scenetree and then push them
+back down to other handlers. eg.
+	func emit_ability_upgrades_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary):
+		ability_upgrades_added.emit(upgrade, current_upgrades)
+we can emit this when a new upgrade is added and then connect to this on the script that we want to handle it, remember
+defensive coding and use if upgrade != "sword_rate": [resource id name]
+							return
+25:
+- Use of Node2D -> CanvasLayer -> Ordering ->Y Sort Enabled
+When you want to spawn objects on a certain node which will hold them ie such as Foreground nodes that you want to appear
+at the front, you can use groups and put _layer at the end so you know it's only got 1 node attached to it.
+What I would normally do is $../../../Foreground.add_child. This is bad because if the scene tree changes you are fucked
+so why not use var foreground_layer = get_tree().get_first_node_in_group("foreground_layer")
+foreground_layer.add_child()

@@ -55,4 +55,4 @@ func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Diction
 	$Timer.wait_time = max(0.1, base_wait_time * (1 - percent_reduction))
 	$Timer.start()
 	
-	print($Timer.wait_time)
+	print("Attack speed: " + str($Timer.wait_time))

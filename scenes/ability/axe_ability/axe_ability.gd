@@ -23,8 +23,7 @@ func tween_method(rotations: float):
 	#MAX_RADIUS
 	var percent = (rotations / 2) # since rotations is 0 to 2 you want it to go to 0 to 1
 	var current_radius = percent * MAX_RADIUS #length radius of 0 to 100
-	print(base_rotation)
-	var current_direction = base_rotation.rotated(rotations * TAU) #TAU means 2 full rotations or 2 PI
+	var current_direction = base_rotation.rotated(rotations * (TAU + PI)) #TAU means 2 full rotations or 2 PI
 	
 	var player = get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:

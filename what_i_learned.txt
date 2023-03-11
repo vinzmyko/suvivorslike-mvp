@@ -89,3 +89,20 @@ at the front, you can use groups and put _layer at the end so you know it's only
 What I would normally do is $../../../Foreground.add_child. This is bad because if the scene tree changes you are fucked
 so why not use var foreground_layer = get_tree().get_first_node_in_group("foreground_layer")
 foreground_layer.add_child()
+32:
+- Uses a vector as a physics direction vector not as a positional vector. I didn't normally see vectors used in this case
+He uses Vector2.Right.rotated() Uses TAU a lot inside as rotated paramaters
+34:
+- He uses duck typing a lot when he wants to defensively code his project
+35:
+- Can copy properies of a .tres file on the spade/spanner icon amd paste them there as well. Useful when inspector is
+bugging out and not showing other variables can just copy and then reset script and then put it back and paste
+36:
+-If you want to flip a spirte you can parent a Node2D and just apply a negative scale on the parent, if you were to do
+this on the actual sprite then it would overwrite the animation
+-sign() function good if you want to tell if a number is negative, positive or zero. sign(-6) returns -1
+38:
+-Used a particle as an on death animation
+39:
+-When you drag a node to script if you press Ctrl after you drag and before you release you will type the whole 
+variable initialisation

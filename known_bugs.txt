@@ -1,0 +1,1 @@
+-bug when monster spawns on the top side of the game, retry collisions

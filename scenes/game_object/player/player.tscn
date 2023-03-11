@@ -164,6 +164,7 @@ shape = SubResource("CircleShape2D_kf4kp")
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+texture_filter = 1
 texture = ExtResource("1_ywtuq")
 offset = Vector2(0, -8)
 

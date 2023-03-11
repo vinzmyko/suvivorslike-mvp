@@ -58,12 +58,12 @@ abilities. He then has a controller object that manages the spawning of the abil
 - Before he put all the functionality of taking damage from the basic_enemy main node to the HurtboxComponent which
 handles all the damage done. Via on_area_entered signal. The HealthComponent is the one that deals with the damage to
 the object.
--In the sword ability it only contains a refference to the HitboxComponent which does all the logic which is actually
+-In the sword ability it only contains a referrence to the HitboxComponent which does all the logic which is actually
 nothing as of right now as all it needs to do it spawn the HitboxArea2D on the enemy and that does everything as the
 sword controller handles the damage
 -On margin containers remember to go to Mouse -> Filter -> Ignore. REMEMBER ALL CONTROL NODES HAS A MOUSE FILTER SETTING
 22:
--He has logic for certain things in each node and he gets a refference to that node via @export var node: Node and then
+-He has logic for certain things in each node and he gets a referrence to that node via @export var node: Node and then
 the calls the functions from that node on the manager/handler script
 - When you want to pause the game use get_tree().pause = true, but you need to go to the setting
 Node -> Process -> Mode -> Always
@@ -127,4 +127,10 @@ tween_callback()'s you need to use tween.set_parallel() at the start this will r
 control over the tweens you can use 
 .set_delay at the end of the tween so it will only run after the delay has passed
 tween.chain() in a new line, tween calls bellow will run after tweens above do
-
+44:
+When he creates new components he just creates functions that you will call on the main script. eg.
+When he is making the floating text scene he creates a function that takes in a string to be displayed, he then referrences the floating text scene
+and then calls the start function on the hurtbox_component and passes in the damage
+45:
+-A referrence of a resource is shared between all the scenes that use it, when you change one instance of the resource it will be reflected all across
+other instances. You can do this by ShaderMaterial -> Resource -> Local to Scene

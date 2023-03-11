@@ -69,7 +69,7 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 	print(arena_difficulty)
 	
 	match arena_difficulty:
-		5, 10, 15, 20:
+		5, 10, 18, 24:
 			print("DIFFICULTY INCREASED")
 			enemy_table.add_item(wizard_enemy_scene, 1)
 		28, 33, 48, 43, 48:

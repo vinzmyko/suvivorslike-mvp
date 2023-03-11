@@ -106,3 +106,25 @@ this on the actual sprite then it would overwrite the animation
 39:
 -When you drag a node to script if you press Ctrl after you drag and before you release you will type the whole 
 variable initialisation
+42:
+-Remember when you want to tween something you can use the lerp function when you need to move a position to a 
+different vector. You dont' need to 1 - exp(-get_process_delta_time()), only where you don't want better comp frame rate to effect animation
+-If you want to delete a node after it has completed a tween do tween.tween_callback(queue_free) which will
+call the method queue_free() after the tween has finished
+-use https://easings.net/en to look at different easing functions to use on a tween
+-to use easing properly you need to call 2 functions which is set_ease() and set_trans() the ease will be the entry transition
+and the trans will be the exit trasition
+-if code line is too long you can you \ to make it different lines. eg.
+	tween.tween_method(tween_collect.bind(global_position), 0.0, 1.0, 1).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
+		tween.tween_method(tween_collect.bind(global_position), 0.0, 1.0, 1)\
+		.set_ease(Tween.EASE_IN)\
+		.set_trans(Tween.TRANS_BACK)
+-can't modify anything about collision in a "on_area_connected"/"on_body_connected" to get around this you can use the funcation
+Callable() which takes in a function. You do this so you can put a .call_deferred() at the end so it will call itself during the 
+next idle frame. eg. Callable(disable_collision).call_deferred()
+-If you want to use a lot of tweens like tweening the lerp of the vial and tweening the scale of the sprite of the vial and using
+tween_callback()'s you need to use tween.set_parallel() at the start this will run all the tweens at once, to add furthur tweaks and have more
+control over the tweens you can use 
+.set_delay at the end of the tween so it will only run after the delay has passed
+tween.chain() in a new line, tween calls bellow will run after tweens above do
+

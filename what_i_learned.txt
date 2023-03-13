@@ -134,3 +134,19 @@ and then calls the start function on the hurtbox_component and passes in the dam
 45:
 -A referrence of a resource is shared between all the scenes that use it, when you change one instance of the resource it will be reflected all across
 other instances. You can do this by ShaderMaterial -> Resource -> Local to Scene
+46:
+- Format strings are cool when you want to control how many decimals a number has. eg.
+	var format_string = "%0.1f"
+	if round(hitbox_component.damage) == hitbox_component.damage:
+		format_string = "%0.0f"
+	floating_text_instance.start(format_string % hitbox_component.damage)
+	to format a string you need to use %. here I set up a format_string variable with a 1 d.p but i set it to 0 d.p when needed
+47:
+-Use MarginContainers as a margin buffer xd
+49:
+-await keyword means stop executing of this function until code ahead of it finishes
+						await animation_player.animation_finished
+- create a one off timer via await get_tree().create_timer(delay).timout
+-AnimationPlayer's can only play one animation at a time, to get around this create a new AnimationPlayer 3Head
+-Sometimes on the on_mouse_entered signal it will play multiple times, this is due to other Control nodes activating it, to stop this Shfit + Click 
+all the Control Nodes and then change Mouse -> Filter -> Ignore

@@ -7,4 +7,4 @@ script = ExtResource("1_lfamo")
 id = "axe_damage"
 max_quantity = 0
 name = "Axe Damage"
-description = "Increases the sword damage by 10%"
+description = "Increases the axe damage by 10%"

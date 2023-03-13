@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bpg2k3in0j2uw"]
+[gd_scene load_steps=14 format=3 uid="uid://bpg2k3in0j2uw"]
 
 [ext_resource type="Script" path="res://scenes/game_object/player/player.gd" id="1_cmfem"]
 [ext_resource type="Texture2D" uid="uid://cuftl58jylxqv" path="res://scenes/game_object/player/player.png" id="1_ywtuq"]
+[ext_resource type="PackedScene" uid="uid://dgqs7t3v1ip1b" path="res://scenes/component/velocity_component.tscn" id="2_ob030"]
 [ext_resource type="PackedScene" uid="uid://cpms6mqpcpgj2" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_t0b4v"]
 [ext_resource type="PackedScene" uid="uid://boxtydmx16gt6" path="res://scenes/component/health_component.tscn" id="2_trofc"]
 
@@ -121,6 +122,10 @@ script = ExtResource("1_cmfem")
 libraries = {
 "": SubResource("AnimationLibrary_mpgth")
 }
+
+[node name="VelocityComponent" parent="." instance=ExtResource("2_ob030")]
+max_speed = 80
+acceleration = 25.0
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_trofc")]
 

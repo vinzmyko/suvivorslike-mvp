@@ -21,6 +21,7 @@ func _ready() -> void:
 	$CollisionArea2D.body_exited.connect(on_body_exited)
 	damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
 	health_component.health_changed.connect(on_health_changed)
+	
 	GameEvents.ability_upgrades_added.connect(on_ability_upgrade_added)
 	
 	update_health_display()
@@ -53,6 +54,7 @@ func check_deal_damage():
 	if number_colliding_bodies == 0 or !damage_interval_timer.is_stopped():
 		return
 	health_component.damage(1)
+	GameEvents.emit_player_damaged()
 	damage_interval_timer.start()
   
 

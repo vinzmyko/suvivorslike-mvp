@@ -1,6 +1,6 @@
 extends Node
 
-const SPAWN_RADIUS = 375
+const SPAWN_RADIUS = 400
 
 @export var basic_enemy_scene: PackedScene
 @export var wizard_enemy_scene: PackedScene
@@ -62,8 +62,8 @@ func on_timer_timeout():
 
 func on_arena_difficulty_increased(arena_difficulty: int):
 	#set time on this function but don't apply it until the next enemy is ready to be spawned
-	var time_off = (.1 / 12) * arena_difficulty
-	time_off = min(time_off, .7)
+	var time_off = (.1 / 6) * arena_difficulty
+	time_off = min(time_off, .1)
 	timer.wait_time = base_spawn_time - time_off
 	
 	print(arena_difficulty)
@@ -77,4 +77,3 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 			enemy_table.add_item(wizard_enemy_scene, 2)
 		54:
 			enemy_table.add_item(wizard_enemy_scene, 1000000)
-

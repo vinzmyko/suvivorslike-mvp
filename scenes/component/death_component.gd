@@ -16,6 +16,7 @@ func on_died():
 		entities_layer.add_child(self)
 		global_position = spawn_position
 		$AnimationPlayer.play("default")
+		$HitRandomStreamPlayer2DComponent.play_random()
 	else:
 		queue_free()
 		return

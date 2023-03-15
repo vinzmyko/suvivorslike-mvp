@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var random_stream_player = $RandomStreamPlayer2DComponent
 
 func _ready() -> void:
 	$Area2D.area_entered.connect(on_area_entered)
@@ -46,3 +47,4 @@ func on_area_entered(other_area: Area2D):
 	tween.chain() #tween calls bellow will run after tweens above do
 	tween.tween_callback(collect)
 	
+	random_stream_player.play_random()

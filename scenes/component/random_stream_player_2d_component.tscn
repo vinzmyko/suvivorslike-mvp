@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/component/random_stream_player_2d_component.gd" id="1_8pl1w"]
 
-[node name="HitRandomStreamPlayer2DComponent" type="AudioStreamPlayer"]
+[node name="RandomStreamPlayer2DComponent" type="AudioStreamPlayer2D"]
+max_distance = 300.0
 bus = &"sfx"
 script = ExtResource("1_8pl1w")

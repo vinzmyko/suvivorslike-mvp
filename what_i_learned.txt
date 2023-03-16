@@ -150,3 +150,9 @@ other instances. You can do this by ShaderMaterial -> Resource -> Local to Scene
 -AnimationPlayer's can only play one animation at a time, to get around this create a new AnimationPlayer 3Head
 -Sometimes on the on_mouse_entered signal it will play multiple times, this is due to other Control nodes activating it, to stop this Shfit + Click 
 all the Control Nodes and then change Mouse -> Filter -> Ignore
+65:
+- When wanting a CanvasLayer as the first child so it renders on top of everything, but if it doesn't render on top of everything put it to the bottom of the node children. You can also play around with the CanvasLayer's the greater the CanvasLayer number the more it will render in front of everything
+- func _unhandled_input(event): it handles input that hasn't been handled by any other processes in the game used to listening to keystrokes.
+get_tree().root.set_input_as_handled() do this after the input so nothing else will handle this event
+69:
+-If you are moving things for a UI you can make a TextureRect or anything a child of a normal Control Node and you can freely move it

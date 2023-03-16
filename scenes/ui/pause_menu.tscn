@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://n5qogdkrgfpr"]
+[gd_scene load_steps=7 format=3 uid="uid://b34fbc8kkfvie"]
 
-[ext_resource type="Script" path="res://scenes/ui/upgrade_screen.gd" id="1_o75bt"]
-[ext_resource type="PackedScene" uid="uid://b5c8k460aa6l3" path="res://scenes/ui/ability_upgrade_card.tscn" id="1_on2w0"]
+[ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="1_pjj41"]
+[ext_resource type="PackedScene" uid="uid://dvxwb342woito" path="res://scenes/ui/sound_button.tscn" id="3_7o3wh"]
 
 [sub_resource type="Animation" id="Animation_5808d"]
 length = 0.001
@@ -59,10 +59,9 @@ _data = {
 "out": SubResource("Animation_w8w32")
 }
 
-[node name="UpgradeScreen" type="CanvasLayer"]
+[node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_o75bt")
-upgrade_card_scene = ExtResource("1_on2w0")
+script = ExtResource("1_pjj41")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "in"
@@ -85,9 +84,52 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CardContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 140)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"BlueOutlineLabel"
+theme_override_font_sizes/font_size = 32
+text = "PAUSED
+"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ResumeButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_7o3wh")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Resume"
+
+[node name="OptionsButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_7o3wh")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Options
+"
+
+[node name="MainMenuButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_7o3wh")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Main Menu
+"

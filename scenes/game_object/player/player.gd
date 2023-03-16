@@ -13,8 +13,14 @@ extends CharacterBody2D
 var number_colliding_bodies = 0
 var base_speed = 0
 
+@export var disabled: bool = false
+
 
 func _ready() -> void:
+	if disabled:
+		var string = "%s is diabled via script"	% name
+		printerr(string)
+		queue_free()	
 	base_speed = velocity_component.max_speed
 	
 	$CollisionArea2D.body_entered.connect(on_body_entered)

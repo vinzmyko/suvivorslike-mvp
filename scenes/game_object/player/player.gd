@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var arena_time_manager: Node
+
 @onready var damage_interval_timer: Timer = $DamageIntervalTimer
 @onready var health_component: Node = $HealthComponent
 @onready var health_bar: ProgressBar = $HealthBar
@@ -21,11 +23,13 @@ func _ready() -> void:
 		var string = "%s is diabled via script"	% name
 		printerr(string)
 		queue_free()	
-	base_speed = velocity_component.max_speed
-	
+		base_speed = velocity_component.max_speed
+		
+	arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
 	$CollisionArea2D.body_entered.connect(on_body_entered)
 	$CollisionArea2D.body_exited.connect(on_body_exited)
 	damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
+	health_component.health_decreased.connect(on_health_decreased)
 	health_component.health_changed.connect(on_health_changed)
 	
 	GameEvents.ability_upgrades_added.connect(on_ability_upgrade_added)
@@ -60,7 +64,7 @@ func check_deal_damage():
 	if number_colliding_bodies == 0 or !damage_interval_timer.is_stopped():
 		return
 	health_component.damage(1)
-	GameEvents.emit_player_damaged()
+	GameEvents.emit_player_damaged() #move back to on_health_decreased if problem
 	damage_interval_timer.start()
   
 
@@ -81,9 +85,11 @@ func on_damage_interval_timer_timeout():
 	check_deal_damage()
 
 
-func on_health_changed():
-	update_health_display()
+func on_health_decreased():
 	hit_random_audio_player.play_random()
+	
+func on_health_changed():
+	update_health_display()	
 
 
 func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades: Dictionary):
@@ -92,3 +98,11 @@ func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades:
 		abilities.add_child(ability.ability_controller_scene.instantiate())
 	elif ability_upgrade.id == "player_speed":
 		velocity_component.max_speed = base_speed + (base_speed * current_upgrades["player_speed"]["quantity"] * .05)
+
+
+func on_arena_difficulty_increased(difficulty: int):
+	var health_regeneration_quantity = MetaProgression.get_upgrade_count("health_regen") 
+	if health_regeneration_quantity > 0:
+		var is_15_second_interval = (difficulty % 3) == 0
+		if is_15_second_interval:
+			health_component.heal(health_regeneration_quantity)

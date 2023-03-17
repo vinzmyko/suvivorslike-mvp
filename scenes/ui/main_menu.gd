@@ -8,7 +8,6 @@ func _ready() -> void:
 	$%QuitButton.pressed.connect(on_quit_button_pressed)
 	%UpgradeButton.pressed.connect(on_upgrade_button_pressed)
 
-
 func on_play_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 

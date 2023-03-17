@@ -22,7 +22,6 @@ func on_timer_timeout():
 		spawn_position = result["position"]
 	
 	var anvil_ability = anvil_ability_scene.instantiate()
-	print(anvil_ability)
 	get_tree().get_first_node_in_group("foreground_layer").add_child(anvil_ability)
 	anvil_ability.global_position = spawn_position
 	anvil_ability.hitbox_component.damage = BASE_DAMANGE

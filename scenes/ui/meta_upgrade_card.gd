@@ -21,6 +21,12 @@ func set_meta_upgrade(upgrade: MetaUpgrade):
 
 
 func update_progress(upgrade: MetaUpgrade):
+	if upgrade.title != card_upgrade.title:
+		var percent = min(MetaProgression.save_data["meta_upgrade_currency"] / upgrade.experience_cost, 1)
+		progress_bar.value = percent
+		required_experience_label.text = str(MetaProgression.save_data["meta_upgrade_currency"]) + "/" + str(upgrade.experience_cost)
+		return
+
 	var current_quantity = 0 
 	if MetaProgression.save_data["meta_upgrades"].has(upgrade.id):
 		current_quantity = MetaProgression.save_data["meta_upgrades"][upgrade.id]["quantity"]		
@@ -35,6 +41,8 @@ func update_progress(upgrade: MetaUpgrade):
 		count_label.text = "x%d" % current_quantity
 	elif current_quantity == upgrade.max_quantity:
 		count_label.text = "MAX"
+	else:
+		count_label.text = "x%d" % current_quantity	
 
 func select_card():
 	animation_player.play("click")
@@ -47,5 +55,5 @@ func on_pressed():
 	MetaProgression.save_data["meta_upgrade_currency"] -= card_upgrade.experience_cost
 	MetaProgression.save()
 	get_tree().call_group("meta_upgrade_card", "update_progress", card_upgrade)
-	#update_progress(card_upgrade)
+	
 	animation_player.play("click")

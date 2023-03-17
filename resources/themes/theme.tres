@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=16 format=3 uid="uid://cv5v1crflilsu"]
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://cv5v1crflilsu"]
 
 [ext_resource type="Texture2D" uid="uid://cbl2n2ucb6374" path="res://assets/ui/ui.png" id="1_6di6v"]
 [ext_resource type="FontFile" uid="uid://cepqcbb8fmftr" path="res://resources/themes/Rockboxcond12.ttf" id="1_d8yh7"]
@@ -90,6 +90,38 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.247059, 0.14902, 0.129412, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6ftw"]
+bg_color = Color(0.996078, 0.682353, 0.203922, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qua2n"]
+bg_color = Color(0.996078, 0.682353, 0.203922, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvj2v"]
+bg_color = Color(0.996078, 0.682353, 0.203922, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmyo0"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.247059, 0.14902, 0.129412, 1)
+border_color = Color(0.247059, 0.14902, 0.129412, 1)
+
 [resource]
 default_font = ExtResource("1_d8yh7")
 default_font_size = 16
@@ -120,3 +152,7 @@ Label/constants/line_spacing = 0
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_6sgql")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_mn4y8")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_ea7gj")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_g6ftw")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_qua2n")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_jvj2v")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_mmyo0")

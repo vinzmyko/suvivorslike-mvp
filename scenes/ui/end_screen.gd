@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var panel_container: PanelContainer = $%PanelContainer
+@onready var continue_button: Button = %UpgradeButton
 
 func _ready() -> void:
 	panel_container.pivot_offset = panel_container.size / 2
@@ -11,7 +12,7 @@ func _ready() -> void:
 	.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 	
 	get_tree().paused = true
-	$%RestartButton.pressed.connect(on_restart_button_pressed)
+	continue_button.pressed.connect(on_continue_button_pressed)
 	$%QuitButton.pressed.connect(on_quit_button_pressed)
 
 
@@ -28,10 +29,11 @@ func play_jingle(defeated: bool = false):
 		$VictoryStreamPlayer.play()
 
 
-func on_restart_button_pressed():
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
-
-
 func on_quit_button_pressed():
-	get_tree().quit()
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
+
+
+func on_continue_button_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/ui/meta_menu.tscn")

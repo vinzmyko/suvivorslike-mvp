@@ -156,3 +156,10 @@ all the Control Nodes and then change Mouse -> Filter -> Ignore
 get_tree().root.set_input_as_handled() do this after the input so nothing else will handle this event
 69:
 -If you are moving things for a UI you can make a TextureRect or anything a child of a normal Control Node and you can freely move it
+73:
+when you're exporting your game and you want the game to start in full screen you have to set the borderless flag to false or it will fuck with your game. eg.
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+78:
+-what he would do is when he is making the resource upgrades he would use the file name instead of using another varialbe for resouce id, since the ids and the file names are the same you can load the file based on the id only
+-wise to set a signal that represents time rather than a difficulty increase

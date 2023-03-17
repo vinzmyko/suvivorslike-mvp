@@ -4,6 +4,7 @@ const SPAWN_RADIUS = 400
 
 @export var basic_enemy_scene: PackedScene
 @export var wizard_enemy_scene: PackedScene
+@export var bat_enemy_scene: PackedScene
 @export var arena_time_manager: Node
 
 @onready var timer = $Timer
@@ -28,9 +29,10 @@ func get_spawn_position():
 	var random_direction = Vector2.RIGHT.rotated(randf_range(0, TAU))
 	for i in 4:
 		spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
+		var additional_check_offset = random_direction * 20
 		
 		#Ray casts from the player to the spawn position
-		var query_paramerters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position, 1)
+		var query_paramerters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position + additional_check_offset, 1)
 		var result = get_tree().root.world_2d.direct_space_state.intersect_ray(query_paramerters)
 	
 		# result returns empty if it doesn't interest with any physcis body
@@ -62,18 +64,18 @@ func on_timer_timeout():
 
 func on_arena_difficulty_increased(arena_difficulty: int):
 	#set time on this function but don't apply it until the next enemy is ready to be spawned
-	var time_off = (.1 / 6) * arena_difficulty
-	time_off = min(time_off, .1)
+	var time_off = (.1 / 10) * arena_difficulty
+	time_off = min(time_off, .7) 
 	timer.wait_time = base_spawn_time - time_off
 	
-	print(arena_difficulty)
-	
+	var string = "time_off = %f, timer_wait_time = %f" % [time_off, timer.wait_time]
+	print(string)
 	match arena_difficulty:
 		5, 10, 18, 24:
-			print("DIFFICULTY INCREASED")
 			enemy_table.add_item(wizard_enemy_scene, 1)
 		28, 33, 48, 43, 48:
-			print("DIFFICULTY SUPER INCREASED")
 			enemy_table.add_item(wizard_enemy_scene, 2)
+			enemy_table.add_item(bat_enemy_scene, 1)
 		54:
-			enemy_table.add_item(wizard_enemy_scene, 1000000)
+			enemy_table.add_item(wizard_enemy_scene, 50)
+			enemy_table.add_item(bat_enemy_scene, 20)

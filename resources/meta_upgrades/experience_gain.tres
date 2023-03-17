@@ -7,5 +7,5 @@ script = ExtResource("1_y0lfj")
 id = "experience_gain"
 max_quantity = 1
 experience_cost = 100
-title = "Increase Experience"
-description = "Increases experience drop chance by 10%."
+title = "Vials Everywhere!"
+description = "All enemies on death will drop a vial!"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=2 format=3 uid="uid://bc0jpkqeq80nf"]
+
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="1_k8wqq"]
+
+[resource]
+script = ExtResource("1_k8wqq")
+id = "experience_super"
+max_quantity = 1
+experience_cost = 500
+title = "SO MANY LEVELS!!!"
+description = "Vial exp will increase by a multiple of 5."

@@ -26,8 +26,12 @@ func tween_collect(percent: float, start_position: Vector2):
 
 
 func collect():
-	GameEvents.emit_experience_vial_collected(1)
-	queue_free()
+	if MetaProgression.get_upgrade_count("experience_super") >= 1:
+		GameEvents.emit_experience_vial_collected(5)
+		queue_free()
+	else:
+		GameEvents.emit_experience_vial_collected(1)
+		queue_free()
 
 
 func disable_collision():

@@ -1,67 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://j2d71t2ldeif"]
+[gd_scene load_steps=4 format=3 uid="uid://j2d71t2ldeif"]
 
 [ext_resource type="PackedScene" uid="uid://bpg2k3in0j2uw" path="res://scenes/game_object/player/player.tscn" id="1_5qcu7"]
-[ext_resource type="PackedScene" uid="uid://qhs2afj6nguj" path="res://scenes/game_object/experience_vial/experience_vial.tscn" id="2_c4x71"]
+[ext_resource type="PackedScene" uid="uid://c0ivdh3n3i8p3" path="res://scenes/ability/anvil_ability_controller/anvil_ability_controller.tscn" id="2_t14wx"]
+[ext_resource type="PackedScene" uid="uid://bjikegin7fksi" path="res://scenes/game_object/wizard_enemy/wizard_enemy.tscn" id="3_ybts8"]
 
 [node name="test" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_5qcu7")]
 position = Vector2(191, 94)
-disabled = true
 
-[node name="ExperienceVial" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(59, 70)
+[node name="AnvilAbilityController" parent="Player/Abilities" index="1" instance=ExtResource("2_t14wx")]
 
-[node name="ExperienceVial2" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(71, 120)
+[node name="WizardEnemy" parent="." instance=ExtResource("3_ybts8")]
+position = Vector2(517, 252)
 
-[node name="ExperienceVial3" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(98, 166)
+[node name="WizardEnemy2" parent="." instance=ExtResource("3_ybts8")]
+position = Vector2(512, 285)
 
-[node name="ExperienceVial4" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(148, 199)
+[node name="WizardEnemy3" parent="." instance=ExtResource("3_ybts8")]
+position = Vector2(464, 297)
 
-[node name="ExperienceVial5" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(196, 228)
+[node name="WizardEnemy4" parent="." instance=ExtResource("3_ybts8")]
+position = Vector2(507, 314)
 
-[node name="ExperienceVial6" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(239, 250)
+[node name="Node2D" type="Node2D" parent="." groups=["foreground_layer"]]
 
-[node name="ExperienceVial7" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(280, 257)
+[node name="Node2D2" type="Node2D" parent="." groups=["entities_layer"]]
 
-[node name="ExperienceVial8" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(353, 261)
-
-[node name="ExperienceVial9" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(377, 124)
-
-[node name="ExperienceVial10" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(375, 144)
-
-[node name="ExperienceVial11" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(391, 142)
-
-[node name="ExperienceVial12" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(395, 124)
-
-[node name="ExperienceVial13" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(382, 101)
-
-[node name="ExperienceVial14" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(364, 115)
-
-[node name="ExperienceVial15" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(359, 120)
-
-[node name="ExperienceVial16" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(354, 127)
-
-[node name="ExperienceVial17" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(355, 135)
-
-[node name="ExperienceVial18" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(359, 141)
-
-[node name="ExperienceVial19" parent="." instance=ExtResource("2_c4x71")]
-position = Vector2(349, 146)
+[editable path="Player"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmac408qnqis7"]
 
-[ext_resource type="Script" path="res://scenes/component/vial_drop_component.gd" id="1_c43sl"]
+[ext_resource type="Script" uid="uid://b8jc5h1pk1jrd" path="res://scenes/component/vial_drop_component.gd" id="1_c43sl"]
 [ext_resource type="PackedScene" uid="uid://qhs2afj6nguj" path="res://scenes/game_object/experience_vial/experience_vial.tscn" id="2_kne28"]
 
 [node name="VialDropComponent" type="Node"]

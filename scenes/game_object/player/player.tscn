@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://bpg2k3in0j2uw"]
 
-[ext_resource type="Script" path="res://scenes/game_object/player/player.gd" id="1_cmfem"]
+[ext_resource type="Script" uid="uid://b0ygc7ora0kwb" path="res://scenes/game_object/player/player.gd" id="1_cmfem"]
 [ext_resource type="Texture2D" uid="uid://cuftl58jylxqv" path="res://scenes/game_object/player/player.png" id="1_ywtuq"]
 [ext_resource type="PackedScene" uid="uid://dgqs7t3v1ip1b" path="res://scenes/component/velocity_component.tscn" id="2_ob030"]
 [ext_resource type="PackedScene" uid="uid://cpms6mqpcpgj2" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_t0b4v"]
@@ -94,8 +94,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mpgth"]
 _data = {
-"RESET": SubResource("Animation_f2yqw"),
-"walk": SubResource("Animation_y02i5")
+&"RESET": SubResource("Animation_f2yqw"),
+&"walk": SubResource("Animation_y02i5")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mn4y8"]

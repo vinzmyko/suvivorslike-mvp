@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0ivdh3n3i8p3"]
 
-[ext_resource type="Script" path="res://scenes/ability/anvil_ability_controller/anvil_ability_controller.gd" id="1_mca8v"]
+[ext_resource type="Script" uid="uid://kwtkmtmvlpi0" path="res://scenes/ability/anvil_ability_controller/anvil_ability_controller.gd" id="1_mca8v"]
 [ext_resource type="PackedScene" uid="uid://das02dvrucybq" path="res://scenes/ability/anvil_ability/anvil_ability.tscn" id="2_fqrux"]
 
 [node name="AnvilAbilityController" type="Node"]

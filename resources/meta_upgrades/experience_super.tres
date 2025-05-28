@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MetaUpgrade" load_steps=2 format=3 uid="uid://bc0jpkqeq80nf"]
 
-[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="1_k8wqq"]
+[ext_resource type="Script" uid="uid://bmyujtc0e2cce" path="res://resources/meta_upgrades/meta_upgrade.gd" id="1_k8wqq"]
 
 [resource]
 script = ExtResource("1_k8wqq")

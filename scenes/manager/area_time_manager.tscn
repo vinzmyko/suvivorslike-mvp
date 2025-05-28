@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0bmao4ikoj1b"]
 
-[ext_resource type="Script" path="res://scenes/manager/area_time_manager.gd" id="1_ndj7h"]
+[ext_resource type="Script" uid="uid://c82lafm5ea30y" path="res://scenes/manager/area_time_manager.gd" id="1_ndj7h"]
 [ext_resource type="PackedScene" uid="uid://bxj1cpat7q17n" path="res://scenes/ui/end_screen.tscn" id="2_cv8rv"]
 
 [node name="AreaTimeManager" type="Node"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://bjikegin7fksi"]
 
-[ext_resource type="Script" path="res://scenes/game_object/wizard_enemy/wizard_enemy.gd" id="1_n4cu0"]
+[ext_resource type="Script" uid="uid://c71gvnpl3btx2" path="res://scenes/game_object/wizard_enemy/wizard_enemy.gd" id="1_n4cu0"]
 [ext_resource type="PackedScene" uid="uid://boxtydmx16gt6" path="res://scenes/component/health_component.tscn" id="1_q55yb"]
 [ext_resource type="PackedScene" uid="uid://6lfxoghsj5hm" path="res://scenes/component/death_component.tscn" id="2_uw6kf"]
 [ext_resource type="Texture2D" uid="uid://br342npi64xem" path="res://scenes/game_object/wizard_enemy/wizard_enemy.png" id="3_7h7h7"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bmac408qnqis7" path="res://scenes/component/vial_drop_component.tscn" id="4_2seet"]
 [ext_resource type="PackedScene" uid="uid://cgkejr5ay7e46" path="res://scenes/component/hurtbox_component.tscn" id="4_tan3y"]
 [ext_resource type="PackedScene" uid="uid://baprjk5mhkovc" path="res://scenes/component/hit_flash_component.tscn" id="5_obwgd"]
-[ext_resource type="Shader" path="res://scenes/component/hit_flash_component.gdshader" id="6_prn58"]
+[ext_resource type="Shader" uid="uid://dklrwgdblwt2u" path="res://scenes/component/hit_flash_component.gdshader" id="6_prn58"]
 [ext_resource type="PackedScene" uid="uid://bp087ip72sskb" path="res://scenes/component/random_stream_player_2d_component.tscn" id="8_5kngh"]
 [ext_resource type="AudioStream" uid="uid://cqoapygb572m8" path="res://assets/audio/footstep_carpet_000.ogg" id="9_hdkdy"]
 [ext_resource type="AudioStream" uid="uid://b2is3gyqq8w8o" path="res://assets/audio/footstep_carpet_001.ogg" id="10_y8crf"]
@@ -127,8 +127,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ukec2"]
 _data = {
-"RESET": SubResource("Animation_eh35a"),
-"walk": SubResource("Animation_1p6qm")
+&"RESET": SubResource("Animation_eh35a"),
+&"walk": SubResource("Animation_1p6qm")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kfbdi"]

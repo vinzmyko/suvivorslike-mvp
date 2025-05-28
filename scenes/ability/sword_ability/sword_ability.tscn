@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cxh82uvpyv1fc"]
 
-[ext_resource type="Script" path="res://scenes/ability/sword_ability/sword_ability.gd" id="1_bxqow"]
+[ext_resource type="Script" uid="uid://do3u88u8hr2og" path="res://scenes/ability/sword_ability/sword_ability.gd" id="1_bxqow"]
 [ext_resource type="Texture2D" uid="uid://cfcccmg4wq0jx" path="res://scenes/ability/sword_ability/sword.png" id="1_nqbla"]
 [ext_resource type="PackedScene" uid="uid://cpm2vjf4vsqxa" path="res://scenes/component/hitbox_component.tscn" id="2_o7qja"]
 
@@ -88,8 +88,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_53d6c"]
 _data = {
-"RESET": SubResource("Animation_j0tf3"),
-"swing": SubResource("Animation_3kdnt")
+&"RESET": SubResource("Animation_j0tf3"),
+&"swing": SubResource("Animation_3kdnt")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8k40d"]

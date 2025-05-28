@@ -1,11 +1,11 @@
 [gd_scene load_steps=22 format=3 uid="uid://cit2isx4vjkqs"]
 
-[ext_resource type="Script" path="res://scenes/game_object/bat_enemy/bat_enemy.gd" id="1_s5kvn"]
+[ext_resource type="Script" uid="uid://d7qerco7curl" path="res://scenes/game_object/bat_enemy/bat_enemy.gd" id="1_s5kvn"]
 [ext_resource type="PackedScene" uid="uid://boxtydmx16gt6" path="res://scenes/component/health_component.tscn" id="2_uqv17"]
 [ext_resource type="PackedScene" uid="uid://dgqs7t3v1ip1b" path="res://scenes/component/velocity_component.tscn" id="3_lhcys"]
 [ext_resource type="PackedScene" uid="uid://bmac408qnqis7" path="res://scenes/component/vial_drop_component.tscn" id="4_tvarq"]
 [ext_resource type="PackedScene" uid="uid://baprjk5mhkovc" path="res://scenes/component/hit_flash_component.tscn" id="5_rcdck"]
-[ext_resource type="Shader" path="res://scenes/component/hit_flash_component.gdshader" id="6_u7cda"]
+[ext_resource type="Shader" uid="uid://dklrwgdblwt2u" path="res://scenes/component/hit_flash_component.gdshader" id="6_u7cda"]
 [ext_resource type="PackedScene" uid="uid://6lfxoghsj5hm" path="res://scenes/component/death_component.tscn" id="7_b75fi"]
 [ext_resource type="PackedScene" uid="uid://bp087ip72sskb" path="res://scenes/component/random_stream_player_2d_component.tscn" id="8_h6exj"]
 [ext_resource type="AudioStream" uid="uid://cqoapygb572m8" path="res://assets/audio/footstep_carpet_000.ogg" id="9_dgowi"]
@@ -75,8 +75,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ukec2"]
 _data = {
-"RESET": SubResource("Animation_eh35a"),
-"walk": SubResource("Animation_1p6qm")
+&"RESET": SubResource("Animation_eh35a"),
+&"walk": SubResource("Animation_1p6qm")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ixu0h"]

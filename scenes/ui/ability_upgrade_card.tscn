@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://b5c8k460aa6l3"]
 
-[ext_resource type="Script" path="res://scenes/ui/ability_upgrade_card.gd" id="1_7ro05"]
+[ext_resource type="Script" uid="uid://phu8ayjjxeey" path="res://scenes/ui/ability_upgrade_card.gd" id="1_7ro05"]
 [ext_resource type="PackedScene" uid="uid://borlgs7biintn" path="res://scenes/component/random_stream_player_component.tscn" id="2_dk60u"]
 [ext_resource type="AudioStream" uid="uid://bhyp6ejpwnviu" path="res://assets/audio/ui/switch1.ogg" id="3_xwf6t"]
 [ext_resource type="AudioStream" uid="uid://dj25bdsg27ygx" path="res://assets/audio/ui/switch2.ogg" id="4_f8qod"]
@@ -143,10 +143,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_urojp"]
 _data = {
-"RESET": SubResource("Animation_2t2fq"),
-"click": SubResource("Animation_4fvwy"),
-"discarded": SubResource("Animation_j0405"),
-"in": SubResource("Animation_galwb")
+&"RESET": SubResource("Animation_2t2fq"),
+&"click": SubResource("Animation_4fvwy"),
+&"discarded": SubResource("Animation_j0405"),
+&"in": SubResource("Animation_galwb")
 }
 
 [sub_resource type="Animation" id="Animation_wrlsk"]
@@ -197,8 +197,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g2xqa"]
 _data = {
-"RESET": SubResource("Animation_wrlsk"),
-"hover": SubResource("Animation_hvmsg")
+&"RESET": SubResource("Animation_wrlsk"),
+&"hover": SubResource("Animation_hvmsg")
 }
 
 [node name="AbilityUpgradeCard" type="PanelContainer" groups=["upgrade_card"]]

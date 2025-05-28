@@ -27,7 +27,7 @@ func pick_item(exclude: Array = []):
 			if item["item"] in exclude: #if the current item were looping through is in the exclude array
 				continue # go to the next iteration. ie. next item in the items array
 			adjusted_items.append(item)
-			adjusted_weight_sum = item["weight"]
+			adjusted_weight_sum += item["weight"]
 	
 	#how it works is the chosen_weight is going to be biased to the larger number basically
 	var chosen_weight = randi_range(1, adjusted_weight_sum) #random number to check which item to pick

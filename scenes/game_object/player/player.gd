@@ -19,11 +19,13 @@ var base_speed = 0
 
 
 func _ready() -> void:
+	base_speed = velocity_component.max_speed
+
 	if disabled:
 		var string = "%s is diabled via script"	% name
 		printerr(string)
 		queue_free()	
-		base_speed = velocity_component.max_speed
+		return
 		
 	arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
 	$CollisionArea2D.body_entered.connect(on_body_entered)

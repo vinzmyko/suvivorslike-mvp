@@ -16,8 +16,16 @@ func load_save_file():
 	if !FileAccess.file_exists(SAVE_FILE_PATH):
 		print("no save data")
 		return
+	
 	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
-	save_data = file.get_var()
+	if file == null:
+		print("Failed to open save file")
+		return
+		
+	var loaded_data = file.get_var()
+	if loaded_data != null:
+		save_data = loaded_data
+	file.close()
 
 
 func save():

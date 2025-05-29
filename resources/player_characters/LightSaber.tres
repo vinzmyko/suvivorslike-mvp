@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=4 format=3 uid="uid://gijs51whuj4d"]
+
+[ext_resource type="Script" uid="uid://ba62dg3qqdfg6" path="res://scripts/CharacterData.gd" id="1_dgqcp"]
+[ext_resource type="Texture2D" uid="uid://cuftl58jylxqv" path="res://scenes/game_object/player/player.png" id="2_el0mw"]
+[ext_resource type="PackedScene" uid="uid://cpms6mqpcpgj2" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="3_i2665"]
+
+[resource]
+script = ExtResource("1_dgqcp")
+character_name = "Lightsaber"
+sprite_texture = ExtResource("2_el0mw")
+starting_ability_controller = ExtResource("3_i2665")
+max_speed = 72
+acceleration = 21
+max_health = 10
+metadata/_custom_type_script = "uid://ba62dg3qqdfg6"

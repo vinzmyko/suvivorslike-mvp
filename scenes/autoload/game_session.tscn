@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6jfu214k1jgl"]
+
+[ext_resource type="Script" uid="uid://i3m88x76u32y" path="res://scenes/autoload/GameSession.gd" id="1_5d1i3"]
+
+[node name="GameSession" type="Node2D"]
+script = ExtResource("1_5d1i3")

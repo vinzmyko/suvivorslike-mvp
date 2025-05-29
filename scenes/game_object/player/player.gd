@@ -8,18 +8,28 @@ extends CharacterBody2D
 @onready var abilities: Node = $Abilities
 @onready var animation_player = $AnimationPlayer
 @onready var visuals = $Visuals
+@onready var sprite = $Visuals/Sprite2D
 @onready var velocity_component: Node = $VelocityComponent
 @onready var hit_random_audio_player = $HitRandomAudio
 
+# Make player get the GameSession.get_selected_character() and then use that for everything
+
+var selected_character: CharacterData
 
 var number_colliding_bodies = 0
 var base_speed = 0
 
 @export var disabled: bool = false
 
-
 func _ready() -> void:
-	base_speed = velocity_component.max_speed
+	# Assign the character these things
+	selected_character = GameSession.get_selected_character()
+	assert(selected_character != null, "Singleton should have been assigned a character resource")
+	assert(selected_character.starting_ability_controller != null, "Singleton should have been assigned a starting ability")
+	base_speed = selected_character.max_speed
+	sprite.texture = selected_character.sprite_texture
+	var starting_ability_controller_node = selected_character.starting_ability_controller.instantiate()
+	abilities.add_child(starting_ability_controller_node)
 
 	if disabled:
 		var string = "%s is diabled via script"	% name

@@ -1,9 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://bpg2k3in0j2uw"]
+[gd_scene load_steps=19 format=3 uid="uid://bpg2k3in0j2uw"]
 
 [ext_resource type="Script" uid="uid://b0ygc7ora0kwb" path="res://scenes/game_object/player/player.gd" id="1_cmfem"]
-[ext_resource type="Texture2D" uid="uid://cuftl58jylxqv" path="res://scenes/game_object/player/player.png" id="1_ywtuq"]
 [ext_resource type="PackedScene" uid="uid://dgqs7t3v1ip1b" path="res://scenes/component/velocity_component.tscn" id="2_ob030"]
-[ext_resource type="PackedScene" uid="uid://cpms6mqpcpgj2" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_t0b4v"]
 [ext_resource type="PackedScene" uid="uid://boxtydmx16gt6" path="res://scenes/component/health_component.tscn" id="2_trofc"]
 [ext_resource type="PackedScene" uid="uid://bp087ip72sskb" path="res://scenes/component/random_stream_player_2d_component.tscn" id="5_qj1o4"]
 [ext_resource type="AudioStream" uid="uid://c42hpcst6dtau" path="res://assets/audio/impactMining_000.ogg" id="6_i6wm3"]
@@ -11,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://3mjalyukedpa" path="res://assets/audio/impactMining_002.ogg" id="8_bbap5"]
 [ext_resource type="AudioStream" uid="uid://dsj1rk25ggath" path="res://assets/audio/impactMining_003.ogg" id="9_8ca68"]
 [ext_resource type="AudioStream" uid="uid://b40upkuex0jyk" path="res://assets/audio/impactMining_004.ogg" id="10_ycb4m"]
+[ext_resource type="Texture2D" uid="uid://bweyi0sywko7g" path="res://female_character_16x16.png" id="11_gbew5"]
 
 [sub_resource type="Animation" id="Animation_f2yqw"]
 length = 0.001
@@ -126,7 +125,7 @@ script = ExtResource("1_cmfem")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_mpgth")
+&"": SubResource("AnimationLibrary_mpgth")
 }
 
 [node name="VelocityComponent" parent="." instance=ExtResource("2_ob030")]
@@ -136,8 +135,6 @@ acceleration = 25.0
 [node name="HealthComponent" parent="." instance=ExtResource("2_trofc")]
 
 [node name="Abilities" type="Node" parent="."]
-
-[node name="SwordAbilityController" parent="Abilities" instance=ExtResource("2_t0b4v")]
 
 [node name="DamageIntervalTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -179,7 +176,7 @@ shape = SubResource("CircleShape2D_kf4kp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
 texture_filter = 1
-texture = ExtResource("1_ywtuq")
+texture = ExtResource("11_gbew5")
 offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

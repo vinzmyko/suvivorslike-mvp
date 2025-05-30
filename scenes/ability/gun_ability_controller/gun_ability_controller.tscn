@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://olqa4vhxxnsw"]
+
+[ext_resource type="Script" uid="uid://cpjegg140u3j0" path="res://scenes/ability/gun_ability_controller/gun_ability_controller.gd" id="1_hdlr2"]
+[ext_resource type="PackedScene" uid="uid://cutf6mjwx34wu" path="res://scenes/ability/gun_ability/gun_ability.tscn" id="2_qyafv"]
+
+[node name="GunAbilityController" type="Node"]
+script = ExtResource("1_hdlr2")
+gun_ability = ExtResource("2_qyafv")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

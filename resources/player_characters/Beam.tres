@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://bl6yk5mk1cnk1"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=4 format=3 uid="uid://bl6yk5mk1cnk1"]
 
 [ext_resource type="Script" uid="uid://ba62dg3qqdfg6" path="res://scripts/CharacterData.gd" id="1_6ervl"]
-[ext_resource type="Texture2D" uid="uid://bweyi0sywko7g" path="res://female_character_16x16.png" id="2_eyfal"]
+[ext_resource type="Texture2D" uid="uid://cuftl58jylxqv" path="res://scenes/game_object/player/player.png" id="2_pgcil"]
+[ext_resource type="PackedScene" uid="uid://olqa4vhxxnsw" path="res://scenes/ability/gun_ability_controller/gun_ability_controller.tscn" id="3_pgcil"]
 
 [resource]
 script = ExtResource("1_6ervl")
 character_name = "Beamo"
-sprite_texture = ExtResource("2_eyfal")
+sprite_texture = ExtResource("2_pgcil")
+starting_ability_controller = ExtResource("3_pgcil")
 max_speed = 80
 acceleration = 25
 max_health = 8

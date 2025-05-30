@@ -18,6 +18,8 @@ var selected_character: CharacterData
 
 var number_colliding_bodies = 0
 var base_speed = 0
+var move_sign
+var last_dir = 1.0
 
 @export var disabled: bool = false
 
@@ -61,7 +63,7 @@ func _process(delta: float) -> void:
 	else:
 		animation_player.play("RESET")
 	
-	var move_sign = sign(movement_vector.x)
+	move_sign = sign(movement_vector.x)
 	if move_sign != 0:
 		visuals.scale.x = move_sign
 

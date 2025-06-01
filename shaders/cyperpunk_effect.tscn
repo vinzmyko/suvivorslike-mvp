@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://m3fjrdwpyje7"]
+
+[ext_resource type="Shader" uid="uid://u1kbtefbysgm" path="res://shaders/cbp.gdshader" id="1_2v8jn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uhagc"]
+shader = ExtResource("1_2v8jn")
+shader_parameter/darkness = 0.502
+shader_parameter/scan_line_intensity = 0.009
+shader_parameter/scan_line_frequency = 35.169
+shader_parameter/cyan_tint = Color(0, 0.8, 1, 1)
+shader_parameter/tint_strength = 0.13
+shader_parameter/noise_intensity = 0.036
+shader_parameter/vignette_strength = 0.782
+
+[node name="CyperpunkEffect" type="ColorRect"]
+material = SubResource("ShaderMaterial_uhagc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

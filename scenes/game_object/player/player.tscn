@@ -8,8 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://brcm4ce0x81k" path="res://assets/audio/impactMining_001.ogg" id="7_2w0kc"]
 [ext_resource type="AudioStream" uid="uid://3mjalyukedpa" path="res://assets/audio/impactMining_002.ogg" id="8_bbap5"]
 [ext_resource type="AudioStream" uid="uid://dsj1rk25ggath" path="res://assets/audio/impactMining_003.ogg" id="9_8ca68"]
+[ext_resource type="Texture2D" uid="uid://b6xue8diksig" path="res://resources/player_characters/lightsaber.png" id="10_28lpv"]
 [ext_resource type="AudioStream" uid="uid://b40upkuex0jyk" path="res://assets/audio/impactMining_004.ogg" id="10_ycb4m"]
-[ext_resource type="Texture2D" uid="uid://bweyi0sywko7g" path="res://female_character_16x16.png" id="11_gbew5"]
 
 [sub_resource type="Animation" id="Animation_f2yqw"]
 length = 0.001
@@ -176,7 +176,7 @@ shape = SubResource("CircleShape2D_kf4kp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
 texture_filter = 1
-texture = ExtResource("11_gbew5")
+texture = ExtResource("10_28lpv")
 offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

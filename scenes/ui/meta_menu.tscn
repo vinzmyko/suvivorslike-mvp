@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8ixaxbyk7wda"]
+[gd_scene load_steps=10 format=3 uid="uid://8ixaxbyk7wda"]
 
 [ext_resource type="Script" uid="uid://l4ffv0u0pfi1" path="res://scenes/ui/meta_menu.gd" id="1_rboxa"]
 [ext_resource type="Resource" uid="uid://daf071j41qffs" path="res://resources/meta_upgrades/experience_gain.tres" id="2_2cjto"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://bc0jpkqeq80nf" path="res://resources/meta_upgrades/experience_super.tres" id="3_nfgxe"]
 [ext_resource type="Resource" uid="uid://d0rkg11oaofjb" path="res://resources/meta_upgrades/health_regen.tres" id="4_d8l55"]
 [ext_resource type="PackedScene" uid="uid://g0w1msny3t85" path="res://scenes/ui/meta_upgrade_card.tscn" id="4_df0b4"]
+[ext_resource type="PackedScene" uid="uid://m3fjrdwpyje7" path="res://shaders/cyperpunk_effect.tscn" id="9_orst0"]
 
 [node name="MetaMenu" type="CanvasLayer"]
 layer = 2
@@ -79,3 +80,5 @@ text = "Back"
 
 [node name="Vignette" parent="." instance=ExtResource("2_xwfv7")]
 layer = 3
+
+[node name="CyperpunkEffect" parent="." instance=ExtResource("9_orst0")]

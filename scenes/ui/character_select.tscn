@@ -45,7 +45,7 @@ size_flags_vertical = 4
 [node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"BlueOutlineLabel"
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "Character Select"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -56,6 +56,7 @@ theme_override_constants/separation = 10
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
+theme_override_font_sizes/font_size = 14
 text = "Char One"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -67,6 +68,7 @@ theme_override_constants/margin_right = 5
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
+theme_override_font_sizes/font_size = 14
 text = "Char Two"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]

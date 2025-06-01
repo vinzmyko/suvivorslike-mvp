@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://n5qogdkrgfpr"]
+[gd_scene load_steps=8 format=3 uid="uid://n5qogdkrgfpr"]
 
 [ext_resource type="Script" uid="uid://b3y4f5qjfocsx" path="res://scenes/ui/upgrade_screen.gd" id="1_o75bt"]
 [ext_resource type="PackedScene" uid="uid://b5c8k460aa6l3" path="res://scenes/ui/ability_upgrade_card.tscn" id="1_on2w0"]
+[ext_resource type="PackedScene" uid="uid://m3fjrdwpyje7" path="res://shaders/cyperpunk_effect.tscn" id="3_bd1lb"]
 
 [sub_resource type="Animation" id="Animation_5808d"]
 length = 0.001
@@ -65,10 +66,10 @@ script = ExtResource("1_o75bt")
 upgrade_card_scene = ExtResource("1_on2w0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "in"
 libraries = {
-"": SubResource("AnimationLibrary_6aou8")
+&"": SubResource("AnimationLibrary_6aou8")
 }
+autoplay = "in"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -91,3 +92,5 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 16
+
+[node name="CyperpunkEffect" parent="." instance=ExtResource("3_bd1lb")]

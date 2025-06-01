@@ -1,9 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd3ny4b7evjju"]
+[gd_scene load_steps=7 format=3 uid="uid://cd3ny4b7evjju"]
 
 [ext_resource type="TileSet" uid="uid://6ei4kdb4l2a1" path="res://resources/tileset.tres" id="1_3jfmb"]
 [ext_resource type="Script" uid="uid://c7ysgt26xe3v8" path="res://scenes/ui/main_menu.gd" id="1_owk2s"]
 [ext_resource type="PackedScene" uid="uid://dvxwb342woito" path="res://scenes/ui/sound_button.tscn" id="2_l7xfu"]
 [ext_resource type="PackedScene" uid="uid://df1sb7lq56o4t" path="res://scenes/ui/vignette.tscn" id="2_vayho"]
+[ext_resource type="PackedScene" uid="uid://m3fjrdwpyje7" path="res://shaders/cyperpunk_effect.tscn" id="5_x2yvf"]
+
+[sub_resource type="Environment" id="Environment_m1kxf"]
+background_mode = 3
+glow_enabled = true
+glow_levels/1 = 6.76
+glow_levels/2 = 4.85
+glow_levels/3 = 3.16
+glow_levels/4 = 4.49
+glow_levels/6 = 3.24
+glow_levels/7 = 4.49
+glow_strength = 1.32
+glow_blend_mode = 1
+glow_hdr_threshold = 2.18
+adjustment_enabled = true
+adjustment_brightness = 3.75
+adjustment_contrast = 4.11
+adjustment_saturation = 2.43
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_owk2s")
@@ -68,3 +86,8 @@ text = "Quit"
 
 [node name="Vignette" parent="." instance=ExtResource("2_vayho")]
 layer = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m1kxf")
+
+[node name="CyperpunkEffect" parent="." instance=ExtResource("5_x2yvf")]

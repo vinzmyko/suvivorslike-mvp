@@ -15,14 +15,10 @@ func start() -> void:
 
 func on_char_one_pressed() -> void:
 	GameSession.set_selected_character(character_resources[0])
-	var message: String = "selected %s" % character_resources[0].character_name
-	print(message)
 	start()
 
 func on_char_two_pressed() -> void:
 	GameSession.set_selected_character(character_resources[1])
-	var message: String = "selected %s" % character_resources[1].character_name
-	print(message)
 	start()
 
 func on_back_pressed() -> void:

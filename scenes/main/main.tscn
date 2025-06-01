@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bb8et88v7amkf"]
+[gd_scene load_steps=14 format=3 uid="uid://bb8et88v7amkf"]
 
 [ext_resource type="PackedScene" uid="uid://bpg2k3in0j2uw" path="res://scenes/game_object/player/player.tscn" id="1_csdac"]
 [ext_resource type="PackedScene" uid="uid://ctvni0lvder0a" path="res://scenes/manager/enemy_manager.tscn" id="1_dwrio"]
@@ -11,11 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://bbqpbjgf2bxj5" path="res://scenes/game_object/game_camera/game_camera.tscn" id="3_0k3k5"]
 [ext_resource type="PackedScene" uid="uid://bhkunwwsujsx8" path="res://scenes/manager/experience_manager.tscn" id="3_01wre"]
 [ext_resource type="PackedScene" uid="uid://df1sb7lq56o4t" path="res://scenes/ui/vignette.tscn" id="3_st6a7"]
+[ext_resource type="PackedScene" uid="uid://m3fjrdwpyje7" path="res://shaders/cyperpunk_effect.tscn" id="3_th5th"]
 [ext_resource type="PackedScene" uid="uid://dtq0txb7y0c7a" path="res://scenes/manager/upgrade_manager.tscn" id="6_e13i7"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_gvg45")
 end_screen_scene = ExtResource("2_ho2qg")
+
+[node name="CyperpunkEffect" type="CanvasLayer" parent="."]
+
+[node name="CyperpunkEffect" parent="CyperpunkEffect" instance=ExtResource("3_th5th")]
 
 [node name="Vignette" parent="." instance=ExtResource("3_st6a7")]
 

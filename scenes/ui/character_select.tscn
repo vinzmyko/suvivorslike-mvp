@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbofl5vy2y8td"]
+[gd_scene load_steps=9 format=3 uid="uid://dbofl5vy2y8td"]
 
 [ext_resource type="Script" uid="uid://b7g003ksuoxoj" path="res://scenes/ui/character_select.gd" id="1_fjx3p"]
 [ext_resource type="Script" uid="uid://ba62dg3qqdfg6" path="res://scripts/CharacterData.gd" id="2_ejph0"]
@@ -7,10 +7,11 @@
 [ext_resource type="Resource" uid="uid://gijs51whuj4d" path="res://resources/player_characters/LightSaber.tres" id="3_iqh33"]
 [ext_resource type="Resource" uid="uid://bl6yk5mk1cnk1" path="res://resources/player_characters/Beam.tres" id="4_hj5gt"]
 [ext_resource type="PackedScene" uid="uid://df1sb7lq56o4t" path="res://scenes/ui/vignette.tscn" id="4_iqh33"]
+[ext_resource type="PackedScene" uid="uid://m3fjrdwpyje7" path="res://shaders/cyperpunk_effect.tscn" id="8_hj5gt"]
 
 [node name="CharacterSelect" type="CanvasLayer"]
 script = ExtResource("1_fjx3p")
-character_resources = Array[ExtResource("2_ejph0")]([ExtResource("3_iqh33"), ExtResource("4_hj5gt")])
+character_resources = Array[ExtResource("2_ejph0")]([ExtResource("4_hj5gt"), ExtResource("3_iqh33")])
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_iufww")
@@ -80,3 +81,5 @@ text = "Back"
 
 [node name="Vignette" parent="." instance=ExtResource("4_iqh33")]
 layer = 2
+
+[node name="CyperpunkEffect" parent="." instance=ExtResource("8_hj5gt")]

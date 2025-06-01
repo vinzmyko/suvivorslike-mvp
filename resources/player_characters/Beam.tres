@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CharacterData" load_steps=4 format=3 uid="uid://bl6yk5mk1cnk1"]
 
 [ext_resource type="Script" uid="uid://ba62dg3qqdfg6" path="res://scripts/CharacterData.gd" id="1_6ervl"]
-[ext_resource type="Texture2D" uid="uid://cuftl58jylxqv" path="res://scenes/game_object/player/player.png" id="2_pgcil"]
+[ext_resource type="Texture2D" uid="uid://c228g6r4dbmwx" path="res://resources/player_characters/beamo.png" id="2_pgcil"]
 [ext_resource type="PackedScene" uid="uid://olqa4vhxxnsw" path="res://scenes/ability/gun_ability_controller/gun_ability_controller.tscn" id="3_pgcil"]
 
 [resource]
